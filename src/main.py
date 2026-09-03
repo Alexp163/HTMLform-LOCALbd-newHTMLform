@@ -1,8 +1,15 @@
-from fastapi import FastAPI
-from view import router as view_router
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 
 
 app = FastAPI()
-app.include_router(view_router)
+templates = Jinja2Templates(directory="../templates")
+
+
+@app.get("/", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse(request=request, name="index.html")
+
 
