@@ -5,5 +5,5 @@ router = APIRouter(tags=["index"])
 
 @router.get("/")
 async def index(request: Request):
-    return render_template("index.html", request=request)
+    return render_template(request, "index.html")
 
