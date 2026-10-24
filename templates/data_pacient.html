@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            background: #fff;
+            padding: 35px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 520px;
+        }
+
+        #form_data_pacient {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4a4a8a;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0f0;
+        }
+
+        form > div {
+            margin-bottom: 16px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border: 2px solid #e0e0f0;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fafaff;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            background-color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #a0a0b8;
+        }
+
+        .form-button {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #form_btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+        }
+
+        #form_btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        #form_btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 540px) {
+            form {
+                padding: 25px 20px;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            #form_data_pacient {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <p>Hello, Alexandr!</p>
+    <form action="" method="post">
+        <div class="form-input">
+            <div id="form_data_pacient">Введите данные пациента</div>
+        </div>
+        <div class="form-name">
+            <input name="name" value="" type="text" class="form-control" placeholder="введите Ф.И.О.пациента"/>
+        </div>
+        <div class="form-age">
+            <input name="age" value="" type="text" class="form-control" placeholder="Введите возраст пациента"/>
+        </div>
+        <div class="form-medical-history">
+            <input name="history" value="" type="text" class="form-control" placeholder="История заболевания"/>
+        </div>
+        <div class="form-story-life">
+            <input name="life" value="" type="text" class="form-control" placeholder="История жизни пациента"/>
+        </div>
+        <div class="form-symptoms">
+            <input name="symptoms" value="" type="text" class="form-control" placeholder="Общее состояние пациента"/>
+        </div>
+        <div class="form-local-status">
+            <input name="local-status" value="" type="text" class="form-control" placeholder="Локальный статус пациента"/>
+        </div>
+        <div class="form-diagnosis">
+            <input name="diagnosis" value="" type="text" class="form-control" placeholder="Диагноз"/>
+        </div>
+        <div class="form-med-tactics">
+            <input name="med-tactics" value="" type="text" class="form-control" placeholder="Лечение"/>
+        </div>
+        <div class="form-med-final">
+            <input name="med-final" value="" type="text" class="form-control" placeholder="Выписной эпикриз"/>
+        </div>
+        <div class="form-button">
+            <button type="submit" id="form_btn">Ввести данные</button>
+        </div>
+    </form>
+</body>
+</html>                                
+
