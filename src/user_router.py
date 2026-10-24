@@ -1,9 +1,9 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, status, HTTPException
 from fastapi.security import OAuth2AuthorizationCodeBearer
 
 from create_user import UserRepository
 from jwt_repository import CredentialsRepository
-from schema import AccessTokenSchema
+from schema import AccessTokenSchema, UserCreateSchema, UserReadSchema
 
 router = APIRouter(tags=["authorized"], prefix="/authorized")
 
@@ -32,4 +32,14 @@ async def get_data(
     if repository.is_valid_token(token):
         return repository_user.get_data_by_username(username)
     else:
-        raise HTTP
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Невалидный токен"
+        )
+
+
+@router.post("/register", status_code=status.HTTP_201_CREATED)
+async def register(user: UserCreateSchema, repository: UserRepository = Depends()) -> UserReadSchema:
+    return repository.create_user(user)
+
+
