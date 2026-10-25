@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, status, HTTPException
-from fastapi.security import OAuth2AuthorizationCodeBearer
+from fastapi.security import OAuth2PasswordBearer
 
 from create_user import UserRepository
 from jwt_repository import CredentialsRepository
@@ -8,13 +8,13 @@ from schema import AccessTokenSchema, UserCreateSchema, UserReadSchema
 router = APIRouter(tags=["authorized"], prefix="/authorized")
 
 
-get_token = OAuth2AuthorizationCodeBearer(tokenUrl="/authorized/login")
+get_token = OAuth2PasswordBearer(tokenUrl="/authorized/login")
 
 
 @router.post("/login")
 async def login(
     repository_user: UserRepository = Depends(),
-    credentials: OAuth2AuthorizationCodeBearer = Depends(),
+    credentials: OAuth2PasswordBearer = Depends(),
     repository: CredentialsRepository = Depends(),
 ) -> AccessTokenSchema:
     user = repository_user.get_user(credentials.username, credentials.password)

@@ -49,7 +49,7 @@ class PacientDataUpdateSchema(BaseModel):
     symptoms: str 
     local_status: str 
     diagnosis: str 
-    med_tactis: str 
+    med_tactiсs: str 
     med_final: str 
 
     

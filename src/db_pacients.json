@@ -1,0 +1,24 @@
+[
+    {
+        "name": "string",
+        "age": 0,
+        "med_history": "string",
+        "story_life": "string",
+        "symptoms": "string",
+        "local_status": "string",
+        "diagnosis": "string",
+        "med_tactis": "string",
+        "med_final": "string"
+    },
+    {
+        "name": "string",
+        "age": 0,
+        "med_history": "string",
+        "story_life": "string",
+        "symptoms": "string",
+        "local_status": "string",
+        "diagnosis": "string",
+        "med_tactis": "string",
+        "med_final": "string"
+    }
+]
